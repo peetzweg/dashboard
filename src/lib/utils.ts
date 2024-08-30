@@ -1,16 +1,14 @@
 import { type ClassValue, clsx } from 'clsx'
 import {
-  LucideProps,
-  Globe,
-  Users,
-  PiggyBank,
-  Landmark,
-  Component,
-  Speech,
-  ScanText,
   Brain,
-  Info,
-  Code,
+  Component,
+  Globe,
+  Landmark,
+  LucideProps,
+  PiggyBank,
+  ScanText,
+  Speech,
+  Users,
 } from 'lucide-react'
 
 import { ForwardRefExoticComponent, RefAttributes } from 'react'
@@ -32,20 +30,10 @@ export type RouterType = {
 
 export const routes: RouterType[] = [
   { link: 'about', name: 'About', icon: Globe },
-  {
-    link: 'info',
-    name: 'Info',
-    icon: Info,
-  },
   { link: 'membership', name: 'Membership', icon: Users },
   { link: 'salary', name: 'Salary', icon: PiggyBank },
   { link: 'governance', name: 'Governance', icon: Landmark },
   { link: 'monthlycalls', name: 'Monthly Calls', icon: Speech },
-  {
-    link: 'dev',
-    name: 'Development',
-    icon: Code,
-  },
   { link: 'modules', name: 'Modules', icon: Component },
   { link: 'runtimes', name: 'Runtimes', icon: Brain },
   { link: 'rfcs', name: 'RFCs', icon: ScanText },
