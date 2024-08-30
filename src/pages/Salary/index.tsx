@@ -100,11 +100,11 @@ export const Salary = () => {
 
   return (
     <main>
-      <h1 className="font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
+      <h1 className="flex-1 shrink-0 whitespace-nowrap font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
         Salary
       </h1>
       <div className="pageTop">
-        <h1 className="font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0 my-3">
+        <h1 className="my-3 flex-1 shrink-0 whitespace-nowrap font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
           Salary and Ranking
         </h1>
         <p>
@@ -173,7 +173,7 @@ export const Salary = () => {
             )}
           </TableBody>
         </Table>
-        <h1 className="font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0 my-6">
+        <h1 className="my-6 flex-1 shrink-0 whitespace-nowrap font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
           Induction
         </h1>
         <p>
@@ -190,7 +190,7 @@ export const Salary = () => {
         <img className="my-6" src={SalaryInduct} alt="salary induct" />
       </div>
       <div className="">
-        <h1 className="font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0 my-6">
+        <h1 className="my-6 flex-1 shrink-0 whitespace-nowrap font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
           Registration
         </h1>
         <p>
@@ -213,7 +213,7 @@ export const Salary = () => {
         >
           Check out the feed for the current Salary cycle on Subsquare
         </ThemedLink>
-        <h1 className="font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0 my-6">
+        <h1 className="my-6 flex-1 shrink-0 whitespace-nowrap font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
           Payouts
         </h1>
         <p>
@@ -232,7 +232,7 @@ export const Salary = () => {
           src={SalaryPayoutOther}
           alt="Salary Payout Other"
         />
-        <h1 className="font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0 my-6">
+        <h1 className="my-6 flex-1 shrink-0 whitespace-nowrap font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
           Failed payments
         </h1>
         <p>

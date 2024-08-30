@@ -94,14 +94,14 @@ export const OpenDevMonthlyCalls = () => {
   })
   return (
     <main>
-      <h1 className="py-2 font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
+      <h1 className="flex-1 shrink-0 whitespace-nowrap py-2 font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
         Monthly calls
       </h1>
       <p>
         The Polkadot Fellowship runs a call (“OpenDev”) on a monthly basis to
         share current and future developments of the Polkadot roadmap.
       </p>
-      <h2 className="my-4 font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-lg font-semibold tracking-tight sm:grow-0">
+      <h2 className="my-4 flex-1 shrink-0 whitespace-nowrap font-unbounded text-lg font-semibold tracking-tight text-primary sm:grow-0">
         Agenda
       </h2>
       <p>
@@ -110,25 +110,25 @@ export const OpenDevMonthlyCalls = () => {
         participate in discussions about RFCs, propose ideas for the growth of
         the Fellowship, and answer questions from the general public.
       </p>
-      <h2 className="my-4 font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-lg font-semibold tracking-tight sm:grow-0">
+      <h2 className="my-4 flex-1 shrink-0 whitespace-nowrap font-unbounded text-lg font-semibold tracking-tight text-primary sm:grow-0">
         Upcoming call
       </h2>
-      <div className="my-4 font-unbounded flex-1 shrink-0 whitespace-nowrap text-md font-semibold tracking-tight sm:grow-0">
+      <div className="text-md my-4 flex-1 shrink-0 whitespace-nowrap font-unbounded font-semibold tracking-tight sm:grow-0">
         The next monthly call is scheduled for the{' '}
         {isMobile ? (
-          <div className="font-extrabold text-primary text-xl">
+          <div className="text-xl font-extrabold text-primary">
             {nextMonthlyCall}
           </div>
         ) : (
-          <span className="font-extrabold text-primary text-xl">
+          <span className="text-xl font-extrabold text-primary">
             {nextMonthlyCall}
           </span>
         )}
       </div>
-      <h2 className="font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-lg font-semibold tracking-tight sm:grow-0">
+      <h2 className="flex-1 shrink-0 whitespace-nowrap font-unbounded text-lg font-semibold tracking-tight text-primary sm:grow-0">
         Past calls
       </h2>
-      <h2 className="pt-4 font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
+      <h2 className="flex-1 shrink-0 whitespace-nowrap pt-4 font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
         2024
       </h2>
       <Table className={isMobile ? 'w-[60vw]' : ''}>
@@ -196,7 +196,7 @@ export const OpenDevMonthlyCalls = () => {
           ))}
         </TableBody>
       </Table>
-      <h2 className="py-2 font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
+      <h2 className="flex-1 shrink-0 whitespace-nowrap py-2 font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
         2023
       </h2>
       <Table className={isMobile ? 'w-[60vw]' : ''}>

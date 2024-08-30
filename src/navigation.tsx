@@ -49,8 +49,8 @@ export const Navigation = ({
 
   return (
     <aside className="fixed inset-y-0 left-0 z-10 hidden w-[14rem] flex-col border-r bg-background sm:flex">
-      <nav className="flex flex-col items-left gap-1 overflow-y-scroll">
-        <div className="sticky top-0 flex text-primary p-4 font-extrabold text-2xl backdrop-blur-sm bg-transparent">
+      <nav className="items-left flex flex-col gap-1 overflow-y-scroll">
+        <div className="sticky top-0 flex bg-transparent p-4 text-2xl font-extrabold text-primary backdrop-blur-sm">
           <PolkadotIcon
             className="max-h-[100%] w-12"
             width={'2.2rem'}
@@ -64,7 +64,7 @@ export const Navigation = ({
                 key={r.link}
                 className={
                   linkStyle(pathname, '/' + (r.link || '')) +
-                  ' flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 '
+                  ' flex items-center gap-4 px-2.5 py-2 text-muted-foreground transition-colors hover:text-foreground'
                 }
                 to={r.link}
               >
@@ -76,13 +76,13 @@ export const Navigation = ({
           <Link
             target="_blank"
             to="https://polkadot-fellows.github.io/RFCs/"
-            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start"
+            className="flex items-center justify-start gap-4 px-2.5 py-2 text-muted-foreground transition-colors hover:text-foreground"
           >
             <BookOpenText className="h-5 w-5" />
             RFCs Book
           </Link>
           <Link
-            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start"
+            className="flex items-center justify-start gap-4 px-2.5 py-2 text-muted-foreground transition-colors hover:text-foreground"
             to="https://matrix.to/#/#fellowship-members:parity.io"
             target="_blank"
           >
@@ -90,7 +90,7 @@ export const Navigation = ({
             Fellowship Members
           </Link>
           <Link
-            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start"
+            className="flex items-center justify-start gap-4 px-2.5 py-2 text-muted-foreground transition-colors hover:text-foreground"
             to="https://matrix.to/#/#fellowship-open-channel:parity.io"
             target="_blank"
           >
@@ -100,7 +100,7 @@ export const Navigation = ({
           <Resources />
         </div>
       </nav>
-      <nav className="mt-auto flex flex-row justify-center items-center gap-8 px-2 sm:py-5 backdrop-blur-sm bg-transparent">
+      <nav className="mt-auto flex flex-row items-center justify-center gap-8 bg-transparent px-2 backdrop-blur-sm sm:py-5">
         <Tooltip>
           <TooltipTrigger asChild>
             <a
@@ -125,8 +125,8 @@ export const Navigation = ({
               size="icon"
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             >
-              <Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-90  stroke-white/60 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <Moon className="h-[1.2rem] w-[1.2rem]  stroke-black/50  rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 stroke-white/60 transition-all dark:rotate-0 dark:scale-100" />
+              <Moon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 stroke-black/50 transition-all dark:-rotate-90 dark:scale-0" />
               <span className="sr-only">Toggle theme</span>
             </Button>
           </TooltipTrigger>
@@ -153,7 +153,7 @@ export const Navigation = ({
           </TooltipContent>
         </Tooltip>
       </nav>
-      <div className="text-xs text-foreground/40 absolute w-full bottom-1 flex flex-row justify-center items-center">
+      <div className="absolute bottom-1 flex w-full flex-row items-center justify-center text-xs text-foreground/40">
         <div>Polkadot Technical Fellowship ©2024</div>
       </div>
     </aside>

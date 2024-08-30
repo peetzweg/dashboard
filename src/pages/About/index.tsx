@@ -18,7 +18,7 @@ export const About = ({ lcStatus }: Props) => {
         List of members and candidates currently inducted in the Fellowship
         Collective.
       </p>
-      
+
       <div>
         <RequestsGrid lcStatus={lcStatus} />
       </div>

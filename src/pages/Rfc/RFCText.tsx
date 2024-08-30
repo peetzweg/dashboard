@@ -5,7 +5,7 @@ export const RFCText = () => {
     <>
       <ThemedLink
         target="_blank"
-        className="text-primary font-bold"
+        className="font-bold text-primary"
         to="https://github.com/polkadot-fellows/RFCs"
       >
         RFCs repository
@@ -20,7 +20,7 @@ export const RFCText = () => {
         capabilities are bounded by relay-chain governance, which is the
         ultimate decider of what code is adopted for block processing.
       </p>
-      <h1 className="my-4 font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
+      <h1 className="my-4 flex-1 shrink-0 whitespace-nowrap font-unbounded text-xl font-semibold tracking-tight text-primary sm:grow-0">
         RFC lifecycle
       </h1>
       <p>
