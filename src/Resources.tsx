@@ -36,7 +36,7 @@ export const getLinks = (title: string, arrays: GetLinksType[]) => (
 
 export const Resources = () => {
   return (
-    <div className="pt-8 flex">
+    <div className="pt-2 flex">
       <Dialog>
         <DialogTrigger asChild>
           <a
