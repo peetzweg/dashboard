@@ -36,23 +36,19 @@ export const routes: RouterType[] = [
     link: 'info',
     name: 'Info',
     icon: Info,
-    childs: [
-      { link: 'membership', name: 'Membership', icon: Users },
-      { link: 'salary', name: 'Salary', icon: PiggyBank },
-      { link: 'governance', name: 'Governance', icon: Landmark },
-      { link: 'monthlycalls', name: 'Monthly Calls', icon: Speech },
-    ],
   },
+  { link: 'membership', name: 'Membership', icon: Users },
+  { link: 'salary', name: 'Salary', icon: PiggyBank },
+  { link: 'governance', name: 'Governance', icon: Landmark },
+  { link: 'monthlycalls', name: 'Monthly Calls', icon: Speech },
   {
     link: 'dev',
     name: 'Development',
     icon: Code,
-    childs: [
-      { link: 'modules', name: 'Modules', icon: Component },
-      { link: 'runtimes', name: 'Runtimes', icon: Brain },
-      { link: 'rfcs', name: 'RFCs', icon: ScanText },
-    ],
   },
+  { link: 'modules', name: 'Modules', icon: Component },
+  { link: 'runtimes', name: 'Runtimes', icon: Brain },
+  { link: 'rfcs', name: 'RFCs', icon: ScanText },
 ]
 
 export type ResourcesType = {

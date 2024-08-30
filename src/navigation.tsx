@@ -1,29 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import PolkadotIcon from '@/assets/img/polkadotIcon.svg?react'
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { RouterType, routes } from '@/lib/utils'
-import { Link, useLocation } from 'react-router-dom'
-import PolkadotIcon from '@/assets/img/polkadotIcon.svg?react'
+import { routes } from '@/lib/utils'
 import { FaCheckCircle, FaGithub } from 'react-icons/fa'
 import { TbLoaderQuarter } from 'react-icons/tb'
+import { Link, useLocation } from 'react-router-dom'
 
-import { BookOpenText, Moon, Sun } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { useTheme } from '@/components/theme-provider'
-import { collectiveClient } from './clients'
+import { Button } from '@/components/ui/button'
+import { BookOpenText, Moon, Sun } from 'lucide-react'
 import { useEffect } from 'react'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
+import { collectiveClient } from './clients'
 
-import { Resources } from './Resources'
 import { SiElement } from 'react-icons/si'
+import { Resources } from './Resources'
 
 const linkStyle = (pathname: string, link: string) => {
   return `link ${
@@ -55,44 +49,19 @@ export const Navigation = ({
 
   return (
     <aside className="fixed inset-y-0 left-0 z-10 hidden w-[14rem] flex-col border-r bg-background sm:flex">
-      <nav className="flex flex-col items-left gap-4 px-4 sm:py-5">
-        <div className="flex text-primary font-extrabold text-2xl">
+      <nav className="flex flex-col items-left gap-1 overflow-y-scroll">
+        <div className="sticky top-0 flex text-primary p-4 font-extrabold text-2xl backdrop-blur-sm bg-transparent">
           <PolkadotIcon
             className="max-h-[100%] w-12"
             width={'2.2rem'}
             height={'2.2rem'}
           />
-          <span>Fellowship</span>
         </div>
-        {routes.map((r) => {
-          if (r.childs?.length) {
-            return (
-              <Accordion type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start">
-                    <r.icon className="h-5 w-5" />
-                    <span>{r.name}</span>
-                  </AccordionTrigger>
-                  <AccordionContent className="pl-4">
-                    {r.childs.map((c: RouterType) => (
-                      <Link
-                        className={
-                          linkStyle(pathname, '/' + (c.link || '')) +
-                          ' flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 '
-                        }
-                        to={c.link}
-                      >
-                        <c.icon className="h-5 w-5" />
-                        <div className="left">{c.name}</div>
-                      </Link>
-                    ))}
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            )
-          } else {
+        <div className="px-2">
+          {routes.map((r) => {
             return (
               <Link
+                key={r.link}
                 className={
                   linkStyle(pathname, '/' + (r.link || '')) +
                   ' flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 '
@@ -103,44 +72,35 @@ export const Navigation = ({
                 <div className="left">{r.name}</div>
               </Link>
             )
-          }
-        })}
-
-        <Link
-          target="_blank"
-          to="https://polkadot-fellows.github.io/RFCs/"
-          className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-        >
-          <BookOpenText className="h-5 w-5" />
-          RFCs Book
-        </Link>
-        <Resources />
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start">
-              <SiElement className="h-5 w-5" />
-              <span>Element</span>
-            </AccordionTrigger>
-            <AccordionContent className="pl-4">
-              <Link
-                className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start"
-                to="https://matrix.to/#/#fellowship-members:parity.io"
-                target="_blank"
-              >
-                Fellowship Members
-              </Link>
-              <Link
-                className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start"
-                to="https://matrix.to/#/#fellowship-open-channel:parity.io"
-                target="_blank"
-              >
-                Open Channel
-              </Link>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+          })}
+          <Link
+            target="_blank"
+            to="https://polkadot-fellows.github.io/RFCs/"
+            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start"
+          >
+            <BookOpenText className="h-5 w-5" />
+            RFCs Book
+          </Link>
+          <Link
+            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start"
+            to="https://matrix.to/#/#fellowship-members:parity.io"
+            target="_blank"
+          >
+            <SiElement className="h-5 w-5" />
+            Fellowship Members
+          </Link>
+          <Link
+            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground transition-colors py-2 justify-start"
+            to="https://matrix.to/#/#fellowship-open-channel:parity.io"
+            target="_blank"
+          >
+            <SiElement className="h-5 w-5" />
+            Open Channel
+          </Link>
+          <Resources />
+        </div>
       </nav>
-      <nav className="mt-auto flex flex-row justify-center items-center gap-8 px-2 sm:py-5">
+      <nav className="mt-auto flex flex-row justify-center items-center gap-8 px-2 sm:py-5 backdrop-blur-sm bg-transparent">
         <Tooltip>
           <TooltipTrigger asChild>
             <a
@@ -165,8 +125,8 @@ export const Navigation = ({
               size="icon"
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             >
-              <Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <Moon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-90  stroke-white/60 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <Moon className="h-[1.2rem] w-[1.2rem]  stroke-black/50  rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <span className="sr-only">Toggle theme</span>
             </Button>
           </TooltipTrigger>
@@ -193,9 +153,8 @@ export const Navigation = ({
           </TooltipContent>
         </Tooltip>
       </nav>
-      <div className="text-primary flex flex-col text-sm font-bold items-center px-2 pb-5">
-        <span>Polkadot Technical Fellowship</span>
-        <span>©2024</span>
+      <div className="text-xs text-foreground/40 absolute w-full bottom-1 flex flex-row justify-center items-center">
+        <div>Polkadot Technical Fellowship ©2024</div>
       </div>
     </aside>
   )
