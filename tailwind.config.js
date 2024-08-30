@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       unbounded: ['Unbounded', 'sans-serif'],
-      manrope: ['"Manrope"', 'sans-serif'],
+      manrope: ['"Manrope"', 'system-ui', 'sans-serif'],
     },
     container: {
       center: true,
